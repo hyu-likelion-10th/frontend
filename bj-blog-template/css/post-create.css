@@ -1,0 +1,35 @@
+.blog-post-form{
+    width: 80%;
+}
+
+#title{
+    margin-bottom:30px;
+    height:30px;
+}
+
+.blog-post{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    cursor: pointer;
+    position: relative;
+}
+
+#body{
+    height:200px;
+    margin-bottom: 40px;
+}
+
+.submit-btn{
+    position: absolute;
+    width:100px;
+    bottom: 0;
+    right: 0;
+    padding: 7px;
+    background-color: #12b2e2;
+    color:white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
