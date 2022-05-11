@@ -1,0 +1,30 @@
+.blog-post-section{
+    width:80%;
+}
+
+.blog-post{
+    display: flex;
+    flex-direction: column;   
+}
+
+.blog-post-title{
+    margin: 0;
+    margin-bottom: 10px;
+    padding-left:5px;    
+}
+
+.blog-post-sub{
+    display:flex;
+    opacity: 0.5;
+    padding-left: 5px;
+}
+
+.blog-post-author{
+    margin-right:10px;
+    margin-bottom:5px;
+}
+
+.blog-post-body{
+    border:1px solid gray;
+    padding:10px;
+}
