@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;600&display=swap');
+*{
+    background-color: rgb(246, 246, 246);
+}
+a{
+    text-decoration: none;
+    color:#000;
+}
+header{
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.headbox{
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items: center;
+    width: auto;
+    height: 100px;
+    font-family: Montserrat;
+}
+main{
+    padding-top: 100px;
+}
+.blog{
+    flex-basis: 90%;
+    font-size: 30px;
+    font-weight: bolder;
+    height:50px;
+}
+.menubar{
+    flex-basis: 5%;
+    text-align: center;
+    height:50px;
+}
+.img{
+    width:35px;
+    height: 35px;
+}
+.icon{
+    border-radius: 100%;
+    width:35px;
+    height: 35px;
+    transition: all 0.2s;
+}
+.btn{
+    background-color: #000;
+    color: #fff;
+    padding: 5px 20px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all 0.2s;
+}
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+}
+.menubox{
+    font-family: Montserrat;
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items: flex-start;
+    width: auto;
+    height: 70px;
+}
+.trend{
+    font-size: 20px;
+}
+.latest{
+    font-size: 20px;
+}
+.img2{
+    width:25px;
+    height: 25px;
+}
+.btn2{
+    background-color: rgb(246, 246, 246);
+    color: #000;
+    padding: 5px 20px;
+    display: inline-block;
+    transition: all 0.2s;
+    position: relative;
+}
+.btn2:after{
+    content: '';
+    position: absolute;
+    width: 0; height: 3px;
+    display: block;
+    margin-top: 1px;
+    right: 0;
+    background: #000;
+    transition: width .2s ease;
+    -webkit-transition: width .2s ease;
+}   
+.btn2:hover:after{
+    width: 100%;
+    left: 0;
+    background: #000;
+}
+.mainbox{
+    display: flex;
+    flex-flow: row wrap;
+    padding-left: 50px;
+    padding-right: 50px;
+    justify-content: space-between;
+    align-content: flex-start;
+    width: auto;
+    height: 900px;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-basis: 300px;
+    height: 400px;
+    margin-bottom: 50px;
+    box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.35);
+    transition: all 0.2s;
+}
+.item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+}
+.temimg{
+    width: 300px;
+    height: 225px;
+}
+.text{
+    width:300px;
+    height:140px;
+    display: inline-block;
+    color: black;
+    padding:10px;
+    box-sizing: border-box;
+    border-bottom: rgb(174, 174, 174) solid 1px;
+}
+.title{
+    font-size: 20px;
+    margin: 0 0 0 0;
+    font-weight: bold;
+}
+.introduce{
+    font-size: 15px;
+    margin: 0 0 0 0;
+}
+.date{
+    font-size: 8px;
+    margin: 5 0 0 0;
+}
+.id{
+    width:300px;
+    height:30px;
+    display: flex;
+    color: black;
+    padding-left:10px;
+    padding-right: 10px;
+    padding-top: 7px;
+    box-sizing: border-box;
+}
+.user{
+    font-size: 14px;
+    margin: 0 0 0 0;
+}
+.profile{
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    margin-right: 5px;
+}
+.layout{
+    display: flex;
+    justify-content: center;
+}
+.loginbox{
+    font-family: Montserrat;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    height: 730px;
+    width: 550px;
+    padding: 30px;
+    padding-top: 130px;
+    box-sizing: border-box;
+}
+.loginlogo{
+    font-size: 30pt;
+    height: 100px;
+    text-align: center;
+}
+.loginid{
+    font-size: 13pt;
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+.loginpw{
+    font-size: 13pt;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 60px;
+    box-sizing: border-box;
+}
+.logininput{
+    margin-top: 3px;
+    border: none;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 390px;
+    height: 25px;
+    font-size: 11pt;
+    padding:5px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+}
