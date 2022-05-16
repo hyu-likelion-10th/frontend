@@ -1,0 +1,178 @@
+*{
+    font-family: 'Noto Sans KR', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+    color: black;
+}
+
+body{
+    background: rgb(247, 240, 211);
+}
+
+h1{
+    font-size: 48px;
+    font-weight: 500;
+}
+
+.contents1{
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.explain1{
+    font-size:24px;
+}
+
+/* Intro */
+.intro_bg{
+    background-image: url("image/intro.jpg");
+    width: 100%;
+    height: 718px;
+}
+
+.header{
+    z-index:10;
+    position: fixed;
+    display: flex;
+    width: 1280px;
+    height: 86px;
+    margin-left:80px;
+}
+
+.searchArea{
+    width:300px;
+    height:40px;
+    margin-top:24px; /*header 높이 - 박스높이 (1px씩 박스테두리)*/
+    border-radius: 5px; /*둥글기 설정*/
+    background-color: rgba(0,0,0,0.5);
+}
+
+.searchArea > form > input{
+    border: none;
+    background: rgba(0,0,0,0); /*서치박스 백그라운드 없애기*/
+    width:250px;
+    height:40px; /*searchArea 검색박스의 크기*/
+    color: white; /*타이핑 색깔*/
+    padding: 10px; /*검색박스에 딱 붙는게 아닌 조금 띄워서 보여주기*/
+}
+
+.searchArea > form > span{
+    width:50px;
+    margin-left: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer; /*cursor 하게 되면 위에 가르켰을 때 손가락 바뀜*/
+}
+
+.nav{
+    display: flex;
+    justify-content: flex-end; /*오른쪽에 붙이기 위함*/
+    line-height: 86px; /*header div의 높이와 맞추어서 중간에 위치하게 함*/
+    width: 980px; /*searchArea 제외하고 남은 공간*/
+}
+
+.nav > li{
+    margin-left:84px;
+}
+
+.nav > li > a{
+    color: white;
+}
+
+.intro_text {
+    position:absolute;
+    top:50%;
+    width:100%;
+    /* margin:231px auto 231px auto; top right bottom left */
+    text-align:center;
+}
+
+.intro_text > h4{
+    font-size: 24px;
+}
+
+.intro_text > h1,
+.intro_text > p{
+    color: white;
+}
+
+/* About me */
+.about_me{
+    display:flex;
+    width:1280px;
+    position: relative; /*현 위치에서 수정*/
+    top: -66px; /*상자가 반 올라가게 하기 위함*/
+    background: black;
+    margin: auto;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.about_me> li{
+    flex:1; /*flex 키 1칸을 부여해주기 위함*/
+    height: 132px;
+    background: white;
+}
+
+.about_me> li> div{
+    text-align: center;
+    height: 57px;
+    margin-top: 37px;
+}
+
+.about_me> li:not(:last-child)> div{ /*가장 마지막 요소만 제외하고*/
+    border-right: 1px solid #E1E1E1;
+}
+
+/* next_text */
+.next_text{
+    width:100%;
+    height:200px;
+    margin-top:-132px; /*위에서 -132px 들어가서 똑같이 넣어줘야 함*/
+}
+
+.next_text> h1{
+    padding-top:82px;
+    text-align:center;
+}
+
+.next_text> h4{
+    padding-top:10px;
+    text-align:center;
+}
+
+/* Projects */
+.projects{
+    display:flex;
+    width: 1280px;
+    height: 640px;
+    margin: auto;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    background: ivory;
+}
+
+.projects> .first_box{
+    width: 780px;
+    height: 600px;
+    margin: 20px 20px 20px 20px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.projects> .second_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 500px;
+    height: 600px;
+    margin: 20px 20px 20px 0px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.projects> .second_box> .contents2{
+    margin-left: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
