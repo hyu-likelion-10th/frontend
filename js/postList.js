@@ -1,5 +1,3 @@
-import getToday from "./date.js";
-
 const getSessionPost = () => {
   let postList = [];
   const index = sessionStorage.getItem("index");
