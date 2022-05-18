@@ -1,0 +1,152 @@
+* {
+    font-family: 'Spoqa Han Sans Neo';
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: black;
+}
+p {
+    font-size: 11px;
+    font-family: NeueMachina-Light;
+}
+h1 {
+    font-size: 28px;
+    font-family: NeueMachinaBold;
+}
+h2 {
+    font-size: 20px;
+}
+hr.solid {
+    border-top: 1px solid gray;
+}
+button {
+    border-radius: 0;
+    background: rgba(255,255,255,0) 100%;
+    padding: 5px;
+    border: 1px solid gray;
+}
+
+.feed {
+    width: 40%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    left: 40px;
+    background: linear-gradient(180deg, rgba(171,255,253,1) 4%, rgba(252,255,135,1) 100%);
+}
+.nav {
+    position: fixed;
+    width: 37.6%;
+    height: auto;
+    border-bottom: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px 5px 5px;
+}
+.logo-img {
+    width: 40px;
+}
+.menu {
+    width: auto;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.menu-tag {
+    font-size: 8px;
+}
+.menu-tag-reverse {
+    color: white;
+}
+.button-reverse {
+    background: black;
+}
+.content-list {
+    position: relative;
+    top: 50px;
+    height: auto;
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 15px;
+    padding: 15px;
+}
+.content {
+    width: 100%;
+    height: 200px;
+    border: 1px solid gray;
+}
+
+.main {
+    width: 600px;
+    height: 100vh;
+    position: fixed;
+    right: 80px;
+}
+.header {
+    margin: 100px 0 20px 0;
+    background: linear-gradient(315deg, rgba(2,0,36,1) 0%, rgba(189,51,255,1) 35%, rgba(0,212,255,1) 100%);
+    padding: 15px 25px;
+}
+.headerText {
+    font-family: Gerbil;
+    color: white;
+}
+.star {
+    width: 40px;
+    height: auto;
+    position: absolute;
+    right: 5px;
+    top: 105px;
+}
+.intro {
+    background: linear-gradient(180deg, rgba(171,255,253,1) 4%, rgba(135,240,255,1) 100%);
+    padding: 25px 30px;
+}
+.intro-title {
+    padding: 7.5px;
+    margin-bottom: 15px;
+    border: 1px solid gray;
+    background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(51,255,189,1) 75%, rgba(0,255,241,1) 100%);
+}
+#card-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 15px;
+    row-gap: 15px;
+}
+.card-content {
+    padding: 15px;
+    border: 1px solid gray;
+} 
+.card-img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border: 1px solid gray;
+    border-top: none;
+}
+
+@font-face {
+    font-family: Gerbil;
+    src: url("../src/Gerbil.otf") format("opentype");
+}
+@font-face {
+    font-family: NeueMachinaLight;
+    src: url("../src/NeueMachina-Light.otf") format("opentype")
+}
+@font-face {
+    font-family: NeueMachinaBold;
+    src: url("../src/NeueMachina-Bold.otf") format("opentype")
+}
