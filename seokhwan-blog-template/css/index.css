@@ -1,0 +1,179 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+* {
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  
+  width: 90%;
+  height: 128px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 60px;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  width: 100vw;
+  height: 100vh;
+}
+
+main {
+  display: grid;
+
+  grid-template-columns: repeat(4, 640px);
+  grid-template-rows: repeat(4, 720px);
+
+  justify-content: center;
+  justify-items: stretch;
+  align-items: stretch;
+
+  row-gap: 20px;
+  column-gap: 20px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icon {
+  width: 128px;
+  height: 128px;
+}
+
+.blogTitle {
+  font-size: 84px;
+  font-weight: 700;
+}
+
+.goProfileBtn {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.postCell {
+  background-color: rgb(213, 235, 253);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.postCell-banner {
+  width: 100%;
+  height: 40%;
+
+  object-fit: cover;
+}
+
+.postCell-headingAndDesc {
+  width: calc(100% - 64px);
+  height: calc(50% - 32px);
+
+  margin-top: 32px;
+  margin-left: 32px;
+  margin-right: 32px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.postCell-heading {
+  font-size: 36px;
+  font-weight: 700;
+
+  line-height: 2.0;
+}
+
+.postCell-desc {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+  
+  flex-grow: 1;
+}
+
+.postCell-timestamp {
+  font-size: 16px;
+  font-weight: 300;
+
+  color: rgb(174, 174, 174);
+  margin-bottom: 8px;
+}
+
+.postCell-footer {
+  width: 100%;
+  height: 10%;
+}
+
+.horizontalDivider {
+  width: 100%;
+  height: 4px;
+
+  background-color: gray;
+}
+
+.postCell-writerAndBookmark {
+  width: calc(100%-64px);
+
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 32px;
+  margin-right: 32px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.postCell-writer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.postCell-writerImgBox {
+  width: 56px;
+  height: 56px;
+  border-radius: 70%;
+  overflow: hidden;
+}
+
+.postCell-writerImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.postCell-writerNickname {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+
+  margin-left: 16px;
+}
+
+.postCell-bookmark {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.postCell-numOfPersonBookmark {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+
+  margin-left: 16px;
+}
