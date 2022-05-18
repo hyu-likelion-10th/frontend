@@ -1,0 +1,24 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BaeByungjae/mutsa_blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BaeByungjae/mutsa_blog/issues"
+  },
+  "homepage": "https://github.com/BaeByungjae/mutsa_blog#readme",
+  "dependencies": {
+    "moment": "^2.29.3"
+  }
+}

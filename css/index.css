@@ -16,6 +16,8 @@ body {
 
 .blog-header-item {
   padding: 0 10px;
+  color: black;
+  cursor: pointer;
 }
 
 .blog-header-item:hover {
@@ -32,8 +34,10 @@ a {
 }
 
 .section-home {
+  width: 300px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
 }
 
