@@ -1,0 +1,53 @@
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blog-title {
+  margin: 40px 0;
+  font-weight: normal;
+  font-family: 'Lobster', cursive;
+  padding: 30px;
+  border-style: dotted;
+  border-width: 4px;
+  border-color: #D75689;
+}
+
+.blog-header {
+  margin: 40px 0;
+  font-size: 20px;
+}
+
+.blog-header-item {
+  padding: 0 10px;
+}
+
+.blog-header-item:hover {
+  transform: scale(1.1);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.active {
+  color: blue;
+}
+
+.section-home {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.section-item {
+  margin-bottom: 10px;
+}
+
+.footer{
+  position : fixed;
+  bottom : 0; 
+}
