@@ -84,9 +84,8 @@ h1{
 
 .intro_text {
     position:absolute;
-    top:50%;
+    top:40%;
     width:100%;
-    /* margin:231px auto 231px auto; top right bottom left */
     text-align:center;
 }
 
