@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800&display=swap");
+@import "components/header.css";
+
+* {
+  font-family: "Montserrat";
+  margin: 10px;
+}
+
+body {
+  height: 1000vh;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px;
+  padding: 20px 0px;
+  border-bottom: 2px solid pink;
+  background-color: white;
+}
+
+main {
+  position: relative;
+  top: 150px;
+}
+.blog_name {
+  font-size: 40px;
+  font-weight: 500;
+  color: rgb(254, 135, 175);
+}
+
+.blog_menu {
+  font-size: 30px;
+}
+
+.blog_menu span {
+  margin: 0px 20px;
+  color: rgb(250, 162, 191);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.home {
+  display: flex;
+}
+
+.profile {
+  border: 1px solid pink;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 10px dotted pink;
+  margin: 30px;
+}
+
+.about-blog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.about-blog__title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.about-blog__context {
+  border-bottom: 1px solid rgb(254, 135, 175);
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.post_box {
+  width: 500px;
+  height: 200px;
+  border: 4px solid pink;
+}
