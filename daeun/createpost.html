@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="./style/post.css">
+    <title>BLOG | CREATE POST</title>
+</head>
+<body>
+    <section class="bg">
+        <article class="wrapper">
+            <section class="header">
+                <span class="blog-title">BLOG</span>
+                <article class="nav">
+                    <a class="nav-item nav-inactive" href="index.html">HOME</a>
+                    <a class="nav-item nav-active">POST</a>
+                    <a class="nav-item nav-inactive" href="contact.html">CONTACT</a>
+                </article>
+                <span class="blog-title">@dianestar</span>
+            </section>
+            <section class="create-post">
+                <article class="create-post-input-div">
+                    <span>TITLE</span>
+                    <input placeholder="제목을 입력해주세요 :)">
+                    <span>CONTENT</span>
+                    <textarea placeholder="내용을 입력해주세요 :)"></textarea>
+                </article>
+                <article class="create-post-btn-div">
+                    <button id="post-confirm-btn" class="serenity-btn">CONFIRM</button>
+                </article>
+            </section>
+            <section class="footer">
+                <span>HYU LIKELION | FRONTEND | CHUNG DA EUN</span>
+            </section>
+        </article>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>
+        $("#post-confirm-btn").click(function() {
+          location.href="post.html";
+        })
+      </script>
+</body>
+</html>
