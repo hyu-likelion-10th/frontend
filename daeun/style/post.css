@@ -16,6 +16,12 @@
     row-gap: 20px;
 }
 
+.card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .create-post {
     width: 80%;
     margin: 0px auto;
@@ -59,7 +65,16 @@
     margin: 40px auto;
 }
 
-.read-post > hr {
+.read-post-control {
+    color: gray;
+    text-align: right;
+}
+
+.read-post-control > span:hover {
+    cursor: pointer;
+}
+
+.read-post-main > hr {
     margin: 40px 0;
 }
 
