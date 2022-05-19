@@ -13,16 +13,25 @@
         <div class="nav">
             <img src="./src/URTC_logo.PNG" class="logo-img"/>
             <div class="menu">
-                <a><p class="menu-tag">KLE</p></a>
-                <a><p class="menu-tag">Study Note</p></a>
-                <a><p class="menu-tag">Weekly Review</p></a>
-                <a><p class="menu-tag">This week's Product</p></a>
-                <button><p class="menu-tag">Sign In</p></button>
-                <button class="button-reverse"><p class="menu-tag-reverse">Sign Up</p></button>
+                <a><p class="menu-tab">LOG</p></a>
+                <a><p class="menu-tab">DEV</p></a>
+                <button><p class="menu-tab">Sign In</p></button>
+                <button class="button-reverse"><p class="menu-tab-reverse">Sign Up</p></button>
             </div>
         </div>
+        <div class="tool-box">
+            <div class="tags">
+                <button class="tag-button"><p class="tag">KLE</p></button>
+                <button class="tag-button"><p class="tag">Weekly Review</p></button>
+                <button class="tag-button"><p class="tag">Academic</p></button>
+            </div>
+            <button id="postBtn" class="button-reverse"><p class="menu-tab-reverse">Post</p></button>
+        </div>
         <div class="content-list">
-            <div class="content"></div>
+            <div class="content">
+                <a id="post-title-read-test" class="post-title-read"></a>
+                <p id="post-content-read-test" class="post-content-read"></p>
+            </div>
             <div class="content"></div>
             <div class="content"></div>
             <div class="content"></div>
@@ -39,6 +48,20 @@
             <div id="card-list"></div>
         </div>
         <div class="links"></div>
+    </div>
+    <div id="modal-background">
+        <div id="postModal" class="modal">
+            <div class="tool-box-modal">
+                <div id="post-date"></div>
+                <button id="saveBtn" class="button-reverse"><p class="menu-tab-reverse">Save</p></button>
+            </div>
+            <div class="input-title">
+                <input type="text" id="post-title" name="post-title" placeholder="제목을 입력하세요">
+            </div>
+            <div class="input-content">
+                <textarea type="text" id="post-content" name="post-content" placeholder="내용을 입력하세요"></textarea>
+            </div>
+        </div>
     </div>
     <script src="./script.js" type="module"></script>
   </body>

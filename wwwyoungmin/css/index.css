@@ -27,11 +27,16 @@ button {
     border-radius: 0;
     background: rgba(255,255,255,0) 100%;
     padding: 5px;
-    border: 1px solid gray;
+    border: 1px solid black;
+}
+button:hover {
+    background-color: rgba(255,255,255,0.3);
+    cursor: pointer;
 }
 
 .feed {
     width: 40%;
+    min-width: 420px;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -42,12 +47,14 @@ button {
 }
 .nav {
     position: fixed;
-    width: 37.6%;
+    width: 40%;
+    min-width: 420px;
+    box-sizing: border-box;
     height: auto;
     border-bottom: 1px solid gray;
     display: flex;
     justify-content: space-between;
-    padding: 5px 20px 5px 5px;
+    padding: 5px 15px 5px 5px;
 }
 .logo-img {
     width: 40px;
@@ -58,23 +65,75 @@ button {
     gap: 10px;
     align-items: center;
 }
-.menu-tag {
+.menu-tab {
     font-size: 8px;
 }
-.menu-tag-reverse {
+.menu-tab-reverse {
     color: white;
+}
+.menu-tab:hover,
+.menu-tab-reverse:hover {
+    cursor: pointer;
 }
 .button-reverse {
     background: black;
+    display: flex;
+    align-items: center;
+}
+.button-reverse:hover {
+    background-color: rgba(0,0,0,0.8);
+    cursor: pointer;
+}
+.tool-box {
+    min-width: 420px;
+    box-sizing: border-box;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    position: relative;
+    top: 50px;
+}
+.tool-box-modal {
+    min-width: 420px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    position: relative;
+}
+#post-date {
+    padding: 5px;
+    font-size: 10px;
+}
+.tags {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.tag-button {
+    border-radius: 50%;
+    background: rgba(255,255,255,0) 100%;
+    padding: 5px;
+    border: 1px solid black;
+}
+.tag-button:hover {
+    background: rgba(255,255,255,0.3) 100%;
+    padding: 5px;
+    border: 1px solid rgba(0,0,0,0.7);
+    cursor: pointer;
 }
 .content-list {
     position: relative;
-    top: 50px;
+    min-width: 420px;
+    box-sizing: border-box;
     height: auto;
     display: grid;
     grid-template-columns: 100%;
     row-gap: 15px;
     padding: 15px;
+    top: 25px;
 }
 .content {
     width: 100%;
@@ -86,12 +145,14 @@ button {
     width: 600px;
     height: 100vh;
     position: fixed;
+    top: 20%;
     right: 80px;
 }
 .header {
-    margin: 100px 0 20px 0;
+    margin-bottom: 20px;
     background: linear-gradient(315deg, rgba(2,0,36,1) 0%, rgba(189,51,255,1) 35%, rgba(0,212,255,1) 100%);
     padding: 15px 25px;
+    border: 1px solid black;
 }
 .headerText {
     font-family: Gerbil;
@@ -107,6 +168,7 @@ button {
 .intro {
     background: linear-gradient(180deg, rgba(171,255,253,1) 4%, rgba(135,240,255,1) 100%);
     padding: 25px 30px;
+    border: 1px solid black;
 }
 .intro-title {
     padding: 7.5px;
@@ -136,6 +198,36 @@ button {
     padding: 10px 15px;
     border: 1px solid gray;
     border-top: none;
+}
+#modal-background {
+    width: 100vw;
+    height: 100vw;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.2);
+    display: none;
+}
+.modal {
+    z-index: 2;
+    position: fixed;
+    left: 20%;
+    top: 10%;
+    width: auto;
+    height: auto;
+    background-color: rgba(255,255,255,0.9);
+    padding: 15px;
+    border: 1px solid gray;
+}
+
+#post-title {
+    width: 600px;
+    height: 20px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+#post-content {
+    width: 600px;
+    height: 300px;
+    padding: 5px;
 }
 
 @font-face {
