@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'IM_Hyemin-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Bold.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: "IM_Hyemin-Bold";
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+}
+
+.bg {
+    min-height: 100vh;
+    background-color: #92a8d1;
+    padding: 50px 0;
+}
+
+.wrapper {
+    background-color: white;
+    width: 1060px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 1px 15px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #d3d3d3;
+    padding: 0 10px;
+}
+
+.nav {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-item {
+    text-decoration: none !important;
+}
+
+.nav-active {
+    color: darkblue !important;
+}
+
+.nav-inactive {
+    color: lightgray;
+}
+
+.nav-inactive:hover {
+    color: #92a8d1;
+}
+
+.blog-title {
+    font-size: 12px;
+    color: #92a8d1;
+}
+
+.home {
+    width: 90%;
+    margin: auto;
+}
+
+.main-text-div {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.greeting {
+    color: darkblue;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.hashtag {
+    color: #92a8d1;
+    font-style: italic;
+    font-size: 18px;
+}
+
+.carousel-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.post-preview-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+}
+
+.footer {
+    height: 60px;
+    margin-top: 10px;
+    
+    font-size: 12px;
+    line-height: 60px;
+    text-align: center;
+    color: #92a8d1;
+}
+
+.card-link {
+    text-decoration: none;
+}
