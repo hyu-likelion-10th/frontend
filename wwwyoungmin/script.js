@@ -78,7 +78,6 @@ saveBtn.onclick = function () {
   document.location.reload();
 };
 editBtn.onclick = function (event) {
-  console.log(event.currentTarget.currentTarget);
   // feedItems
   // setFeedItem()
 };
