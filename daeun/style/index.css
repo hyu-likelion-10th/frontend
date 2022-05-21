@@ -113,3 +113,9 @@ body {
 .card-link {
     text-decoration: none;
 }
+
+.card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

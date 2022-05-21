@@ -21,10 +21,17 @@
                 <span class="blog-title">@dianestar</span>
             </section>
             <section class="read-post">
-                <p class="read-post-title">Card Title</p>
-                <p class="read-post-desc">2022-00-00 정다은</p>
-                <hr>
-                <p class="read-post-content">Some quick example text to build on the card title and make up the bulk of the card's content. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <article class="read-post-control">
+                    <span class="post-edit">Edit</span>
+                    <span> | </span>
+                    <span class="post-delete">Delete</span>
+                </article>
+                <article class="read-post-main">
+                    <p class="read-post-title">Card Title</p>
+                    <p class="read-post-desc">2022-00-00 정다은</p>
+                    <hr>
+                    <p class="read-post-content">Some quick example text to build on the card title and make up the bulk of the card's content. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </article>
             </section>
             <section class="footer">
                 <span>HYU LIKELION | FRONTEND | CHUNG DA EUN</span>
@@ -32,10 +39,6 @@
         </article>
     </section>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>
-        $("#post-confirm-btn").click(function() {
-          location.href="post.html";
-        })
-      </script>
+    <script src="./js/readpost.js"></script>
 </body>
 </html>
