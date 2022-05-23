@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <title>blog_login</title>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width">
+   <link href="./css/style3.css" rel="stylesheet"/>
+   <script defer src="./js/post-create.js"></script>
+ </head>
+ <body>
+    <header>
+        <div class = "headbox">
+          <div class = "blog"><a href = "main.html">Blog</a></div>
+          <div class = "head2">
+            <div>
+              <form method="post" enctype="multipart/form-data">
+                <input type ="file" id="imgup" accept="image/*" onchange="loadFile(this)">
+              </form>
+            </div>
+            <div><a href="myblog.html" class="btn">나가기</a></div>
+            <div><button type="submit" class="submit-btn" onclick="handleSubmit()">등록</button></div>
+          </div>
+        </div>
+    </header>
+    <main>
+        <div class = "layout">
+            <div class = "postbox">
+              <form class = "blog-post-form" action="./myblog.html">
+                <div class = "pb"><textarea class = "posttitle" id = "title" placeholder="제목"></textarea></div>
+                <div class = "pb"><p class = "line"></p></div>
+                <div class = "pb"><textarea class = "postcontent" id ="body" placeholder="내용"></textarea></div>
+              </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
