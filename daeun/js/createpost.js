@@ -13,7 +13,7 @@ if (savedPosts) {
 const onConfirmPost = () => {    
     const now = new Date();
     const form = {
-        index: posts.length,
+        index: posts.length == 0 ? 0 : posts[posts.length-1].index + 1,
         date: now.getFullYear() + "-" + String(now.getMonth()+1).padStart(2, "0") + "-" + now.getDate(),
         title: $title.value,
         content: $content.value,

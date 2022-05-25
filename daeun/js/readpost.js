@@ -1,6 +1,6 @@
 const link = window.location.search;
 const splitedLink = link.split("=");
-const index = splitedLink[1];
+const index = parseInt(splitedLink[1]);
 
 const $readPostTitle = document.querySelector(".read-post-title");
 const $readPostDesc = document.querySelector(".read-post-desc");
@@ -9,12 +9,18 @@ const $postDelete = document.querySelector(".post-delete");
 const $postEdit = document.querySelector(".post-edit");
 
 let posts = [];
+let thisPost;
 const POST_KEY = "posts";
 const savedPosts = localStorage.getItem(POST_KEY);
 if (savedPosts) {
     posts = JSON.parse(savedPosts);
+    posts.forEach((post) => {
+        if (post.index === index) {
+            thisPost = post;
+            console.log(thisPost);
+        }
+    });
 }
-const thisPost = posts[index];
 
 $readPostTitle.innerText = thisPost.title;
 $readPostDesc.innerText = thisPost.date + " 정다은";
