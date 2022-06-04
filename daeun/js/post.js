@@ -38,7 +38,8 @@ const getEachPostCard = (post) => {
 }
 
 const getAllPostCards = () => {
-    posts.forEach((post) => {
+    const reversed = posts.reverse();
+    reversed.forEach((post) => {
         getEachPostCard(post);
     });
 }

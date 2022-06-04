@@ -37,11 +37,11 @@ const getEachPostCard = (post) => {
 }
 
 const getRecentPostCards = () => {
-    console.log(posts);
-    let i = posts.length-1;
-    while (i >= 0 && i>= posts.length-3) {
-        getEachPostCard(posts[i]);
-        i--;
+    const reversed = posts.reverse();
+    let i = 0;
+    while (i < posts.length && i < 3) {
+        getEachPostCard(reversed[i]);
+        i++;
     }
 }
 
