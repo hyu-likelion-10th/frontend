@@ -1,0 +1,33 @@
+.header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #d3d3d3;
+    padding: 0 10px;
+}
+
+.nav {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-item {
+    text-decoration: none !important;
+    color: lightgray;
+}
+
+.active {
+    color: darkblue !important;
+}
+
+.nav-item:hover {
+    color: #92a8d1;
+}
+
+.blog-title {
+    font-size: 12px;
+    color: #92a8d1;
+}

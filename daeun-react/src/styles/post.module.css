@@ -1,0 +1,38 @@
+.post {
+    width: 90%;
+    margin: auto;
+}
+
+.post-btn-div {
+    display: flex;
+    justify-content: flex-end; 
+    margin: 20px 10px;
+}
+
+.post-cards-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.btn {
+    border: solid 2px #92a8d1;
+    border-radius: 25px;
+    color: #92a8d1;
+    background-color: white;
+    padding: 10px 20px;
+    font-size: 15px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #92a8d1;
+}

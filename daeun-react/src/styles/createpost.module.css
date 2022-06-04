@@ -1,0 +1,52 @@
+.create-post {
+    width: 80%;
+    margin: 0px auto;
+}
+
+.input-div {
+    margin: 40px 0;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    row-gap: 20px;
+}
+
+.input-div > span {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.input-div > input {
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+.input-div > textarea {
+    height: 400px;
+    font-size: 15px;
+    padding: 10px;
+    resize: none;    
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+.btn-div {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    border: solid 2px #92a8d1;
+    border-radius: 25px;
+    color: #92a8d1;
+    background-color: white;
+    padding: 10px 20px;
+    font-size: 15px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #92a8d1;
+}

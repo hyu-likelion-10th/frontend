@@ -1,0 +1,33 @@
+.read-post {
+    width: 80%;
+    margin: 40px auto;
+}
+
+.control {
+    color: gray;
+    text-align: right;
+}
+
+.control > span:hover {
+    cursor: pointer;
+}
+
+.main > hr {
+    margin: 40px 0;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.desc {
+    font-size: 18px;
+    color: gray;
+}
+
+.content {
+    font-size: 18px;
+    line-height: 28px;
+}
+

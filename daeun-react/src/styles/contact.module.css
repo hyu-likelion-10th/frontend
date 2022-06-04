@@ -1,0 +1,71 @@
+.contact {
+    width: 50%;
+    height: 400px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.namecard-left-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    padding: 10px 10px 20px 10px;
+
+    background-color: lightgray;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.profile-img {
+    width: 250px;
+    height: 250px;
+    margin: 5px;
+}
+
+.namecard-right-div {  
+    height: 280px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    font-family: "MinSans-Light";
+}
+
+.contact-wrapper-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-type-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.contact-img {
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+}
+
+.contact-text {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.contact-info {
+    color: black;
+    text-decoration: none;
+}
+
+.contact-info:hover {
+    color: #92a8d1;
+    text-decoration: none;
+}
