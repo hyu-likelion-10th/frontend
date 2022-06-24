@@ -7,8 +7,10 @@ import styles from "../styles/createpost.module.css";
 
 const CreatePost = ( { updateMode } ) => {
     const { register, handleSubmit, watch, formState: {errors}, setFocus }  = useForm();
+
     const [posts, setPosts] = useState([]);
     const [post, setPost] = useState({});
+
     const params = useParams();
     const navigate = useNavigate();
 
@@ -16,7 +18,7 @@ const CreatePost = ( { updateMode } ) => {
         const now = new Date();
         const form = {
             index: now,
-            date: now.getFullYear() + "-" + String(now.getMonth()+1).padStart(2, "0") + "-" + now.getDate(),
+            date: now.getFullYear() + "-" + String(now.getMonth()+1).padStart(2, "0") + "-" + now.getDate() + " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds(),
             title: watch("title"),
             content: watch("content"),
         };
@@ -29,9 +31,7 @@ const CreatePost = ( { updateMode } ) => {
         else {
             let newPosts = [...posts];
             newPosts.forEach((v, i) => {
-                if (v.index === params.id) {
-                    newPosts.splice(i, 1, form);
-                }
+                if (v.index === params.id) { newPosts.splice(i, 1, form); }
             });
             localStorage.setItem("posts", JSON.stringify(newPosts));
             alert("포스트 수정이 완료되었습니다");
@@ -42,16 +42,16 @@ const CreatePost = ( { updateMode } ) => {
     useEffect(() => {
         const savedPosts = localStorage.getItem("posts");
         if (savedPosts) {
-            setPosts(JSON.parse(savedPosts));
+            const parsedPosts = JSON.parse(savedPosts);
+            setPosts(parsedPosts);
 
             if (updateMode) {
-                JSON.parse(savedPosts).forEach((v) => {
-                    if (v.index === params.id) {
-                        setPost(v);
-                    }
-                })    
+                parsedPosts.forEach((v) => {
+                    if (v.index === params.id) { setPost(v); }
+                });
             }
         }
+
         setFocus("title");
     }, []);
 
@@ -62,13 +62,21 @@ const CreatePost = ( { updateMode } ) => {
                 <div className={styles[`input-div`]}>
                     <span>TITLE</span>
                     <input
-                        {...register("title", {required: true})}
+                        {...register("title", {
+                            required: {
+                                value: true,
+                                message: "🚨 제목이 없는 포스트는 등록이 불가합니다",
+                            },
+                            maxLength: {
+                                value: 30,
+                                message: "🚨 제목은 30자 이하로 작성해주세요",
+                            }
+                        })}
                         placeholder={"제목을 입력해주세요 :)"}
                         defaultValue={post.title || ""}
                     />
-                    
                 </div>
-                {errors.title && <p className={styles.errors}>🚨 제목이 없는 포스트는 등록이 불가합니다</p>}
+                {errors.title && <p className={styles.errors}>{errors.title.message}</p>}
                 <div className={styles[`input-div`]}>
                     <span>CONTENT</span>
                     <textarea 

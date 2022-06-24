@@ -13,7 +13,7 @@ const PostCard = ({index, date, title, content}) => {
                 }}
             >
                 <p className={`${styles.gray} ${styles.sm}`}>{date}</p>
-                <p className={styles.gray}>{content}</p>
+                <p className={`${styles.gray} ${styles.content}`}>{content}</p>
             </Card>
         </>
     );

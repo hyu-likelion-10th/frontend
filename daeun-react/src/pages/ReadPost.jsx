@@ -7,6 +7,7 @@ import styles from "../styles/readpost.module.css";
 const ReadPost = () => {
     const params = useParams();
     const navigate = useNavigate();
+
     const [posts, setPosts] = useState([]);
     const [post, setPost] = useState({});
 
@@ -21,11 +22,10 @@ const ReadPost = () => {
     useEffect(() => {
         const savedPosts = localStorage.getItem("posts");
         if (savedPosts) {
-            setPosts(JSON.parse(savedPosts));
-            JSON.parse(savedPosts).forEach((v) => {
-                if (v.index === params.id) {
-                    setPost(v);
-                }
+            const parsedPosts = JSON.parse(savedPosts);
+            setPosts(parsedPosts);
+            parsedPosts.forEach((v) => {
+                if (v.index === params.id) { setPost(v); }
             })
         }
     }, []);
