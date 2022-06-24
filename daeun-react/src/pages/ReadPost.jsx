@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Layout from "../components/common/Layout";
 import Header from "../components/common/Header";
 import styles from "../styles/readpost.module.css";
 
 const ReadPost = () => {
+    const params = useParams();
+    const [post, setPost] = useState({});
+
+    useEffect(() => {
+        const savedPosts = localStorage.getItem("posts");
+        if (savedPosts) {
+            const posts = JSON.parse(savedPosts);
+            posts.forEach((v) => {
+                if (v.index === params.id) {
+                    setPost(v);
+                }
+            })
+        }
+    }, []);
+
     return (
         <Layout>
             <Header active="POST"/>
@@ -14,10 +30,10 @@ const ReadPost = () => {
                     <span className={styles.delete}>Delete</span>
                 </article>
                 <article className={styles.main}>
-                    <p className={styles.title}>Card Title</p>
-                    <p className={styles.desc}>2022-00-00 정다은</p>
+                    <p className={styles.title}>{post.title}</p>
+                    <p className={styles.desc}>{post.date}</p>
                     <hr />
-                    <p className={styles.content}>Some quick example text to build on the card title and make up the bulk of the card's content. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p className={styles.content}>{post.content}</p>
                 </article>
             </section>
         </Layout>

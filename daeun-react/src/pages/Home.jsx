@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/common/Header";
 import Layout from "../components/common/Layout";
 import PostCard from "../components/PostCard";
@@ -26,6 +26,13 @@ const Home = () => {
         autoplaySpeed: 3000,
     };
 
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        const savedPosts = localStorage.getItem("posts");
+        if (savedPosts) { setPosts(JSON.parse(savedPosts).reverse().slice(0, 3)); }
+    }, []);
+
     return (
         <Layout>
                 <Header active="HOME" />
@@ -45,7 +52,9 @@ const Home = () => {
                         <span className={styles.hashtag}>#EDUCATIONAL_TECHNOLOGY #COMPUTER_SOFTWARE #HTML #CSS #JAVASCRIPT #REACT</span>
                         </article>
                     <article className={styles[`post-preview-div`]}>
-                        <PostCard title="제목" content="내용내용" />
+                        {posts.map((v, i) => (
+                            <PostCard key={v.index} index={v.index} date={v.date} title={v.title} content={v.content} />
+                        ))}
                     </article>
                 </section>
         </Layout>
