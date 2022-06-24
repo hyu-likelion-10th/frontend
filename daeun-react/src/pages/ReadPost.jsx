@@ -7,13 +7,22 @@ import styles from "../styles/readpost.module.css";
 const ReadPost = () => {
     const params = useParams();
     const navigate = useNavigate();
+    const [posts, setPosts] = useState([]);
     const [post, setPost] = useState({});
+
+    const onDelete = () => {
+        if (window.confirm("삭제하시겠습니까?")) {
+            let newPosts = posts.filter((v) => v.index !== post.index);
+            localStorage.setItem("posts", JSON.stringify(newPosts));
+            navigate("/post");
+        }
+    }
 
     useEffect(() => {
         const savedPosts = localStorage.getItem("posts");
         if (savedPosts) {
-            const posts = JSON.parse(savedPosts);
-            posts.forEach((v) => {
+            setPosts(JSON.parse(savedPosts));
+            JSON.parse(savedPosts).forEach((v) => {
                 if (v.index === params.id) {
                     setPost(v);
                 }
@@ -28,7 +37,7 @@ const ReadPost = () => {
                 <article className={styles.control}>
                     <span className={styles.edit} onClick={() => navigate(`/edit/${params.id}`)}>Edit</span>
                     <span> | </span>
-                    <span className={styles.delete}>Delete</span>
+                    <span className={styles.delete} onClick={onDelete}>Delete</span>
                 </article>
                 <article className={styles.main}>
                     <p className={styles.title}>{post.title}</p>
