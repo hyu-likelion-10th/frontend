@@ -4,6 +4,7 @@ import Header from "../components/common/Header";
 import Layout from "../components/common/Layout";
 import PostCard from "../components/PostCard";
 import styles from "../styles/post.module.css";
+import IPost from "../interfaces/IPost";
 
 const Post = () => {
     const [posts, setPosts] = useState([]);
@@ -29,7 +30,7 @@ const Post = () => {
                     </button>
                 </article>
                 <article className={styles[`post-cards-div`]}>
-                    {posts.map((v, i) => (
+                    {posts.map((v: IPost) => (
                         <PostCard key={v.index} index={v.index} date={v.date} title={v.title} content={v.content} />
                     ))}
                 </article>  

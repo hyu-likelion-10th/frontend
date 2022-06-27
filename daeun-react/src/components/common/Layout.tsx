@@ -1,7 +1,11 @@
 import React from "react";
 import styles from "../../styles/layout.module.css";
 
-const Layout = ({ children }) => {
+interface LayoutProps {
+    children: React.ReactNode,
+};
+
+const Layout = ({ children }: LayoutProps) => {
     return (
         <section className={styles.bg}>
             <article className={styles.wrapper}>

@@ -3,17 +3,18 @@ import { useParams, useNavigate } from "react-router-dom";
 import Layout from "../components/common/Layout";
 import Header from "../components/common/Header";
 import styles from "../styles/readpost.module.css";
+import IPost from "../interfaces/IPost";
 
 const ReadPost = () => {
     const params = useParams();
     const navigate = useNavigate();
 
-    const [posts, setPosts] = useState([]);
-    const [post, setPost] = useState({});
+    const [posts, setPosts] = useState<IPost[]>([]);
+    const [post, setPost] = useState<IPost>({index: "", date:"", title: "", content: ""});
 
     const onDelete = () => {
         if (window.confirm("삭제하시겠습니까?")) {
-            let newPosts = posts.filter((v) => v.index !== post.index);
+            let newPosts = posts.filter((v: IPost) => v.index !== post.index);
             localStorage.setItem("posts", JSON.stringify(newPosts));
             navigate("/post");
         }
@@ -24,11 +25,11 @@ const ReadPost = () => {
         if (savedPosts) {
             const parsedPosts = JSON.parse(savedPosts);
             setPosts(parsedPosts);
-            parsedPosts.forEach((v) => {
+            parsedPosts.forEach((v: IPost) => {
                 if (v.index === params.id) { setPost(v); }
             })
         }
-    }, []);
+    }, [params.id]);
 
     return (
         <Layout>

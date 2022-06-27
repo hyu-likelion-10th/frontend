@@ -4,21 +4,27 @@ import { useParams, useNavigate } from "react-router";
 import Layout from "../components/common/Layout";
 import Header from "../components/common/Header";
 import styles from "../styles/createpost.module.css";
+import IPost from "../interfaces/IPost";
 
-const CreatePost = ( { updateMode } ) => {
+interface CreatePostProps {
+    updateMode: boolean,
+};
+
+const CreatePost = ( { updateMode }: CreatePostProps ) => {
     const { register, handleSubmit, watch, formState: {errors}, setFocus }  = useForm();
 
-    const [posts, setPosts] = useState([]);
-    const [post, setPost] = useState({});
+    const [posts, setPosts] = useState<IPost[]>([]);
+    const [post, setPost] = useState<IPost>({index: "", date:"", title: "", content: ""});
 
     const params = useParams();
     const navigate = useNavigate();
 
     const onSubmit = () => {
         const now = new Date();
-        const form = {
-            index: now,
-            date: now.getFullYear() + "-" + String(now.getMonth()+1).padStart(2, "0") + "-" + now.getDate() + " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds(),
+        const form: IPost = {
+            index: String(now),
+            date: now.getFullYear() + "-" + String(now.getMonth()+1).padStart(2, "0") + "-" + now.getDate() +
+                " " + String(now.getHours()).padStart(2, "0") + ":" + String(now.getMinutes()).padStart(2, "0") + ":" + String(now.getSeconds()).padStart(2, "0"),
             title: watch("title"),
             content: watch("content"),
         };
@@ -29,7 +35,7 @@ const CreatePost = ( { updateMode } ) => {
             navigate("/post");    
         }
         else {
-            let newPosts = [...posts];
+            let newPosts: IPost[] = [...posts];
             newPosts.forEach((v, i) => {
                 if (v.index === params.id) { newPosts.splice(i, 1, form); }
             });
@@ -46,14 +52,14 @@ const CreatePost = ( { updateMode } ) => {
             setPosts(parsedPosts);
 
             if (updateMode) {
-                parsedPosts.forEach((v) => {
+                parsedPosts.forEach((v: IPost) => {
                     if (v.index === params.id) { setPost(v); }
                 });
             }
         }
 
         setFocus("title");
-    }, []);
+    }, [params.id, setFocus, updateMode]);
 
     return (
         <Layout>
@@ -73,7 +79,7 @@ const CreatePost = ( { updateMode } ) => {
                             }
                         })}
                         placeholder={"제목을 입력해주세요 :)"}
-                        defaultValue={post.title || ""}
+                        defaultValue={updateMode ? post.title : ""}
                     />
                 </div>
                 {errors.title && <p className={styles.errors}>{errors.title.message}</p>}
@@ -82,10 +88,10 @@ const CreatePost = ( { updateMode } ) => {
                     <textarea 
                         {...register("content", {required: true})}
                         placeholder={"내용을 입력해주세요 :)"}
-                        defaultValue={post.content || ""}
+                        defaultValue={updateMode ? post.content : ""}
                     />
                 </div>
-                {errors.content && <p className={styles.errors}>🚨 내용이 없는 포스트는 등록이 불가합니다</p>}
+                {errors.content && (!updateMode ? <p className={styles.errors}>🚨 내용이 없는 포스트는 등록이 불가합니다</p> : <p className={styles.errors}>🚨 내용을 수정해주세요</p>)}
                 <div className={styles[`btn-div`]}>
                     <button className={styles.btn}>CONFIRM</button>
                 </div>

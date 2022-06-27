@@ -6,6 +6,7 @@ import styles from "../styles/home.module.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import IPost from "../interfaces/IPost";
 
 const images = [
     require("../sources/ankko_1.jpg"),
@@ -13,7 +14,7 @@ const images = [
     require("../sources/ankko_3.jpg"),
     require("../sources/ankko_4.jpg"),
     require("../sources/ankko_5.jpg"),
-]
+];
 
 const Home = () => {
     const settings = {
@@ -47,12 +48,12 @@ const Home = () => {
                         })}
                     </Slider>
                     <article className={styles[`main-text-div`]}>
-                        <span className={styles.greeting}>안녕하세요 정다은 입니다 : )</span>
+                        <span className={styles.greeting}>안녕하세요 정다은 입니다</span>
                         <br/>
                         <span className={styles.hashtag}>#EDUCATIONAL_TECHNOLOGY #COMPUTER_SOFTWARE #HTML #CSS #JAVASCRIPT #REACT</span>
                         </article>
                     <article className={styles[`post-preview-div`]}>
-                        {posts.map((v, i) => (
+                        {posts.map((v: IPost) => (
                             <PostCard key={v.index} index={v.index} date={v.date} title={v.title} content={v.content} />
                         ))}
                     </article>

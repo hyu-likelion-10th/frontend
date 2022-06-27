@@ -2,7 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "../../styles/header.module.css";
 
-const Header = ({ active }) => {
+interface HeaderProps {
+    active: string,
+};
+
+const Header = ({ active }: HeaderProps) => {
     return (
         <section className={styles.header}>
             <span className={styles[`blog-title`]}>BLOG</span>
