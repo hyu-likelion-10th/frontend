@@ -7,6 +7,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import IPost from "../interfaces/IPost";
+import IGetAllPosts from "../interfaces/IGetAllPosts";
+import axios from "axios";
 
 const images = [
     require("../sources/ankko_1.jpg"),
@@ -30,8 +32,20 @@ const Home = () => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        const savedPosts = localStorage.getItem("posts");
-        if (savedPosts) { setPosts(JSON.parse(savedPosts).reverse().slice(0, 3)); }
+        const getAllPosts = async () => {
+            try {
+                const {
+                    data, status
+                }: IGetAllPosts = await axios.get("http://52.79.216.188/blog");
+                
+                if (status === 200) {
+                    setPosts(data.reverse().slice(0, 3));
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getAllPosts();
     }, []);
 
     return (
@@ -54,7 +68,7 @@ const Home = () => {
                         </article>
                     <article className={styles[`post-preview-div`]}>
                         {posts.map((v: IPost) => (
-                            <PostCard key={v.index} index={v.index} date={v.date} title={v.title} content={v.content} />
+                            <PostCard key={v.id} id={v.id} postDate={v.postDate} title={v.title} content={v.content} />
                         ))}
                     </article>
                 </section>

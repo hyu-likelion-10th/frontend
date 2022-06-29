@@ -1,6 +1,6 @@
 export default interface IPost {
-    index: string,
-    date: string,
-    title: string,
-    content: string,
-};
+    id: number;
+    title: string;
+    postDate: string;
+    content: string;
+}

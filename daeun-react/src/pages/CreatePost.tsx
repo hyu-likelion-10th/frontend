@@ -5,61 +5,63 @@ import Layout from "../components/common/Layout";
 import Header from "../components/common/Header";
 import styles from "../styles/createpost.module.css";
 import IPost from "../interfaces/IPost";
+import IGetOnePost from "../interfaces/IGetOnePost";
+import axios from "axios";
 
 interface CreatePostProps {
-    updateMode: boolean,
+    updateMode: boolean;
 };
 
 const CreatePost = ( { updateMode }: CreatePostProps ) => {
     const { register, handleSubmit, watch, formState: {errors}, setFocus }  = useForm();
 
-    const [posts, setPosts] = useState<IPost[]>([]);
-    const [post, setPost] = useState<IPost>({index: "", date:"", title: "", content: ""});
+    const [post, setPost] = useState<IPost>({id: -1, postDate:"", title: "", content: ""});
 
-    const params = useParams();
+    const id = parseInt(useParams().id);
     const navigate = useNavigate();
 
-    const onSubmit = () => {
-        const now = new Date();
-        const form: IPost = {
-            index: String(now),
-            date: now.getFullYear() + "-" + String(now.getMonth()+1).padStart(2, "0") + "-" + now.getDate() +
-                " " + String(now.getHours()).padStart(2, "0") + ":" + String(now.getMinutes()).padStart(2, "0") + ":" + String(now.getSeconds()).padStart(2, "0"),
-            title: watch("title"),
-            content: watch("content"),
-        };
+    const onSubmit = async () => {
+        const form = new FormData();
+            form.append("title", watch("title"));
+            form.append("content", watch("content"));
 
-        if (!updateMode)  {
-            localStorage.setItem("posts", JSON.stringify([...posts, form]));        
-            alert("포스트 등록이 완료되었습니다");
-            navigate("/post");    
-        }
-        else {
-            let newPosts: IPost[] = [...posts];
-            newPosts.forEach((v, i) => {
-                if (v.index === params.id) { newPosts.splice(i, 1, form); }
-            });
-            localStorage.setItem("posts", JSON.stringify(newPosts));
-            alert("포스트 수정이 완료되었습니다");
-            navigate("/post");
+        try {
+            if (!updateMode) {
+                const { status } = await axios.post("http://52.79.216.188/blog", form);
+                if (status === 201) {
+                    alert("포스트 등록이 완료되었습니다");
+                    navigate("/post");
+                }
+            }
+            else {
+                const { status } = await axios.put(`http://52.79.216.188/blog/${id}`, form);
+                if (status === 200) {
+                    alert("포스트 수정이 완료되었습니다");
+                    navigate("/post");
+                }
+            }
+        } catch (error) {
+            console.log(error);
         }
     }
 
     useEffect(() => {
-        const savedPosts = localStorage.getItem("posts");
-        if (savedPosts) {
-            const parsedPosts = JSON.parse(savedPosts);
-            setPosts(parsedPosts);
+        const getOnePost = async () => {
+            try {
+                const {
+                    data, status
+                }: IGetOnePost = await axios.get(`http://52.79.216.188/blog/${id}`);
 
-            if (updateMode) {
-                parsedPosts.forEach((v: IPost) => {
-                    if (v.index === params.id) { setPost(v); }
-                });
+                if (status === 200) {
+                    setPost(data);
+                }
+            } catch (error) {
+                console.log(error);
             }
         }
-
+        getOnePost();
         setFocus("title");
-    }, [params.id, setFocus, updateMode]);
+    }, [id, setFocus]);
 
     return (
         <Layout>
